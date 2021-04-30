@@ -8,6 +8,13 @@
  *
  * @author Blank47
  */
-public class Motherboard {
+public class Motherboard extends ComputerComponents{
+
+    public Motherboard(String type, String series) {
+        super(type, series);
+    }
+    
+    
+    
     
 }

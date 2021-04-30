@@ -13,7 +13,24 @@ public class Build {
     private Cpu cpu;
     private Gpu gpu;
     private Motherboard motherboard;
+    private Ram ram;
+    private PowerSupply Psu;
 
+    public Ram getRam() {
+        return ram;
+    }
+
+    public void setRam(Ram ram) {
+        this.ram = ram;
+    }
+
+    public PowerSupply getPsu() {
+        return Psu;
+    }
+
+    public void setPsu(PowerSupply Psu) {
+        this.Psu = Psu;
+    }
     
     
 
@@ -41,6 +58,10 @@ public class Build {
         this.motherboard = motherboard;
     }
     
+    public void CompatibilityCheck(){
+        
+    // implement compatabilitycheck.
     
+    } 
     
 }
