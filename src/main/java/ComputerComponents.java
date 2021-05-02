@@ -13,13 +13,23 @@ public class ComputerComponents {
    private int id;
    private String type;
    private String series;
-   
+  // giving ids to computer components to simulate a functioning database. 
    private static int serialNumber =0;
 
     public ComputerComponents( String type, String series) {
+        // incremntal ids to simulate database serial ids
         this.id = this.serialNumber++;
         this.type = type;
         this.series = series;
+        
+    }
+
+    public ComputerComponents() {
+        // made this constructer to reset ids to 0
+    }
+
+    public static void setSerialNumber(int serialNumber) {
+        ComputerComponents.serialNumber = serialNumber;
     }
 
     public int getId() {

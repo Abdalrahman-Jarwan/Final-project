@@ -9,9 +9,20 @@
  * @author Blank47
  */
 public class Motherboard extends ComputerComponents{
+    
+    private String  socket;
 
-    public Motherboard(String type, String series) {
+    public Motherboard(String type, String series, String  socket) {
         super(type, series);
+        this.socket = socket;
+    }
+
+    public String getSocket() {
+        return socket;
+    }
+
+    public void setSocket(String socket) {
+        this.socket = socket;
     }
     
     

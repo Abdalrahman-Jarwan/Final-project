@@ -8,6 +8,7 @@
  *
  * @author Blank47
  */
+// this class is made to contain all the selcted computer parts.
 public class Build {
     
     private Cpu cpu;
@@ -60,8 +61,18 @@ public class Build {
     
     public void CompatibilityCheck(){
         
-    // implement compatabilitycheck.
+    // simulate a compatability check.
+    // you can add any type of compatability check here.
     
+    if ( this.motherboard.getSocket().equals(this.cpu.getSocket()))
+    {
+    System.out.println("Build is compatable");
+    
+    
+    }
+    else {
+    System.out.println("Build is uncompatable");
+    }
     } 
     
 }
