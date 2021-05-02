@@ -8,6 +8,7 @@
  *
  * @author Blank47
  */
+// the shell was made to contain all the functionalities of the program.
 public class Shell {
 
     private Cpu[] supportedCpus;
@@ -17,12 +18,13 @@ public class Shell {
     private PowerSupply[]supportedPsu;
 
     public Shell() {
-
+// this simulates retrevied data.
+// this contains all the computer parts data in an array lists.
         this.supportedCpus = new Cpu[3];
 
-        supportedCpus[0] = new Cpu("Intel", "Core i7", "10700");
-        supportedCpus[1] = new Cpu("Intel", "Core i5", "10600");
-        supportedCpus[2] = new Cpu("Intel", "Core i3", "10320");
+        supportedCpus[0] = new Cpu("Intel", "Core i7", "10700", "is");
+        supportedCpus[1] = new Cpu("Intel", "Core i5", "10600", "is");
+        supportedCpus[2] = new Cpu("Intel", "Core i3", "10320", "is");
 
         this.supportedGpus = new Gpu[3];
 
@@ -31,8 +33,9 @@ public class Shell {
         supportedGpus[2] = new Gpu("Nvidia", "Rtx3000 series", "RTX 3070");
 
         this.supportedMotherboards = new Motherboard[2];
-        supportedMotherboards[0] = new Motherboard("Intel", "Z590");
-        supportedMotherboards[1] = new Motherboard("AMD", "X 570");
+        supportedMotherboards[0] = new Motherboard("Intel", "Z590","is");
+        supportedMotherboards[1] = new Motherboard("AMD", "X570", "am4");
+        
         
         this.supportedRam = new Ram[2];
         supportedRam[0] = new Ram("Kingston","DDR4","2GB");
@@ -85,7 +88,7 @@ public class Shell {
     }
 
     
-    
+    // printAll"computer part" functions are used to show all supported computer parts in the program.
     public void PrintAllCpus() {
 
         for (int i = 0; i < this.supportedCpus.length; i++) {
@@ -138,21 +141,10 @@ public class Shell {
             System.out.println();
         }
     } 
+    // printAll"computer part" functions are used to show all supported computer parts in the program END.
     
-    public void ShowBuild(Build build) {
-
-        Cpu cpu = build.getCpu();
-        Gpu gpu = build.getGpu();
-        Motherboard mb = build.getMotherboard();
-        Ram ram = build.getRam();
-        PowerSupply Psu = build.getPsu();
-        System.out.println("Cpu id: " + cpu.getId() + " Type: " + cpu.getType() + " Series: " + cpu.getSeries() + " Generation: " + cpu.getGeneration());
-        System.out.println("Gpu id: " + gpu.getId() + " Type: " + gpu.getType() + " Series: " + gpu.getSeries() + " Model: " + gpu.getModel());
-        System.out.println("MB id: " + mb.getId() + " Type: " + mb.getType() + " Series: " + mb.getSeries());
-        System.out.println("Ram id: " + ram.getId() + " Type: " + ram.getType() + " Series: " + ram.getSeries()+ "Capacity: " + ram.getCapacity());
-        System.out.println("Psu id: " + Psu.getId() + " Type: " + Psu.getType() + " Series: " + Psu.getSeries()+ " Wattage: "+ Psu.getWattage());
-    }
-
+    
+    // Get"computer part"ById functions are used to retreive the selected computer part.
     public Cpu GetCpuById(int id) {
 
         Cpu tempCpu = null;
@@ -215,5 +207,28 @@ public class Shell {
         }
         return tempPsu;
     }
+    // Get"computer part"ById functions are used to retreive the selected computer part END.
+    
+    // this function was made to rests the Ids whenever you start a new build.
+    public void resetId(){
+        ComputerComponents computerComponents = new ComputerComponents();
+        computerComponents.setSerialNumber(0);
+        
+    }
+    
+    // this function prints the selected computer parts in a build object.
+    public void ShowBuild(Build build) {
 
+        Cpu cpu = build.getCpu();
+        Gpu gpu = build.getGpu();
+        Motherboard mb = build.getMotherboard();
+        Ram ram = build.getRam();
+        PowerSupply Psu = build.getPsu();
+        System.out.println("Cpu id: " + cpu.getId() + " Type: " + cpu.getType() + " Series: " + cpu.getSeries() + " Generation: " + cpu.getGeneration());
+        System.out.println("Gpu id: " + gpu.getId() + " Type: " + gpu.getType() + " Series: " + gpu.getSeries() + " Model: " + gpu.getModel());
+        System.out.println("MB id: " + mb.getId() + " Type: " + mb.getType() + " Series: " + mb.getSeries());
+        System.out.println("Ram id: " + ram.getId() + " Type: " + ram.getType() + " Series: " + ram.getSeries()+ "Capacity: " + ram.getCapacity());
+        System.out.println("Psu id: " + Psu.getId() + " Type: " + Psu.getType() + " Series: " + Psu.getSeries()+ " Wattage: "+ Psu.getWattage());
+    }
+    
 }
