@@ -10,20 +10,21 @@
  */
 public class PowerSupply extends ComputerComponents {
     
-    private String Wattage;
-
-    public PowerSupply(String type, String series, String Wattage) {
+    private int Wattage;
+    
+    
+    public PowerSupply(String type, String series, int Wattage) {
         super(type, series);
         this.Wattage = Wattage;
     }
 
     
 
-    public String getWattage() {
+    public int getWattage() {
         return Wattage;
     }
 
-    public void setWattage(String Wattage) {
+    public void setWattage(int Wattage) {
         this.Wattage = Wattage;
     }
     

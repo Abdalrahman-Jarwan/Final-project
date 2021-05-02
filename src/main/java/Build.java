@@ -64,15 +64,22 @@ public class Build {
     // simulate a compatability check.
     // you can add any type of compatability check here.
     
+    //motherboard and cpu compatibility
     if ( this.motherboard.getSocket().equals(this.cpu.getSocket()))
     {
-    System.out.println("Build is compatable");
-    
-    
+    System.out.println("Cpu and mother board are compatable");
     }
     else {
     System.out.println("Build is uncompatable");
     }
+    // psu effecient or not
+    if (this.Psu.getWattage()< 650){
+    System.out.println("Low power effeincey");
+    } 
+    else {
+        System.out.println("power is effeinent");
+    }
     } 
     
+  
 }

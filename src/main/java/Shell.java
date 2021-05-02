@@ -42,8 +42,8 @@ public class Shell {
         supportedRam[1] = new Ram("Kingston","DDR4","4GB");
         
         this.supportedPsu = new PowerSupply[2];
-        supportedPsu[0] = new PowerSupply("Evga","Bronze","350W");
-        supportedPsu[1] = new PowerSupply("Evga","Gold","450W");
+        supportedPsu[0] = new PowerSupply("Evga","Bronze",350);
+        supportedPsu[1] = new PowerSupply("Evga","Gold",750);
 
     }
 
