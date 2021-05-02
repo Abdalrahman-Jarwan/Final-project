@@ -9,20 +9,20 @@
  * @author Blank47
  */
 public class Ram extends ComputerComponents {
-    private String Capacity;
+    private int Capacity;
 
-    public Ram(String type, String series, String Capacity) {
+    public Ram(String type, String series, int Capacity) {
         super(type, series);
         this.Capacity = Capacity;
     }
     
     
 
-    public String getCapacity() {
+    public int getCapacity() {
         return Capacity;
     }
 
-    public void setCapacity(String Capacity) {
+    public void setCapacity(int Capacity) {
         this.Capacity = Capacity;
     }
     

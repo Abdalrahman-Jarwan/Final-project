@@ -70,15 +70,23 @@ public class Build {
     System.out.println("Cpu and mother board are compatable");
     }
     else {
-    System.out.println("Build is uncompatable");
+    System.out.println("Cpu and mother board are uncompatable");
     }
     // psu effecient or not
     if (this.Psu.getWattage()< 650){
     System.out.println("Low power effeincey");
     } 
     else {
-        System.out.println("power is effeinent");
+        System.out.println("power is efficient");
     }
+    
+    if (this.ram.getCapacity()< 8){
+    System.out.println("Low ram capacity ");
+    } 
+    else {
+        System.out.println("Ram capacity is enough");
+    }
+    
     } 
     
   
