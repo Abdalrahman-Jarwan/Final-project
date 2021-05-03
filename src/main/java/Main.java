@@ -61,10 +61,10 @@ public class Main {
 
         Build build = new Build();
 
-        System.out.println("Please Choose a Cpu , and a Gpu: ");
+        System.out.println("Please Choose a Cpu: ");
         shell.PrintAllCpus();
 
-        System.out.println("ps: Enter the id of wanted Cpu , Gpu: ");
+        System.out.println("ps: Enter the id of wanted Cpu: ");
         input = scanner.nextInt();
         build.setCpu(shell.GetCpuById(input));
 

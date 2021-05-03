@@ -8,7 +8,7 @@
  *
  * @author Blank47
  */
-// the shell was made to contain all the functionalities of the program.
+// the shell was made to contain all the reuseable functionalities of the program.
 public class Shell {
 
     private Cpu[] supportedCpus;
