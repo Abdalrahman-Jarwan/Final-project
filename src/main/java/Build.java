@@ -61,10 +61,10 @@ public class Build {
     
     public void CompatibilityCheck(){
         
-    // simulate a compatability check.
+    // simulate a compatibility check.
     // you can add any type of compatability check here.
     
-    //motherboard and cpu compatibility
+    //motherboard and cpu compatibility check.
     if ( this.motherboard.getSocket().equals(this.cpu.getSocket()))
     {
     System.out.println("Cpu and mother board are compatable");
@@ -79,7 +79,7 @@ public class Build {
     else {
         System.out.println("power is efficient");
     }
-    
+    // ram capacity check.
     if (this.ram.getCapacity()< 8){
     System.out.println("Low ram capacity ");
     } 

@@ -17,7 +17,7 @@ public class ComputerComponents {
    private static int serialNumber =0;
 
     public ComputerComponents( String type, String series) {
-        // incremntal ids to simulate database serial ids
+        // incremental ids to simulate database serial ids
         this.id = this.serialNumber++;
         this.type = type;
         this.series = series;
@@ -25,7 +25,7 @@ public class ComputerComponents {
     }
 
     public ComputerComponents() {
-        // made this constructer to reset ids to 0
+        // made this constructor to reset ids to 0
     }
 
     public static void setSerialNumber(int serialNumber) {

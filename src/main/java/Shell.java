@@ -14,8 +14,8 @@ public class Shell {
     private Cpu[] supportedCpus;
     private Gpu[] supportedGpus;
     private Motherboard[] supportedMotherboards;
-    private Ram[]supportedRam;
-    private PowerSupply[]supportedPsu;
+    private Ram[] supportedRam;
+    private PowerSupply[] supportedPsu;
 
     public Shell() {
 // this simulates retrevied data.
@@ -37,24 +37,27 @@ public class Shell {
         supportedGpus[3] = new Gpu("AMD", "Radeon6000 series", "Radeon 6900XT");
         supportedGpus[4] = new Gpu("AMD", "Radeon6000 series", "Radeon 6800XT");
         supportedGpus[5] = new Gpu("AMD", "Radeon6000 series", "Radeon 6700XT");
-        
+
         this.supportedMotherboards = new Motherboard[4];
-        supportedMotherboards[0] = new Motherboard("Intel", "Z590","is");
-        supportedMotherboards[1] = new Motherboard("Intel", "H570","is");
+        
+        supportedMotherboards[0] = new Motherboard("Intel", "Z590", "is");
+        supportedMotherboards[1] = new Motherboard("Intel", "H570", "is");
         supportedMotherboards[2] = new Motherboard("AMD", "X570", "am4");
         supportedMotherboards[3] = new Motherboard("AMD", "B550", "am4");
-        
+
         this.supportedRam = new Ram[4];
-        supportedRam[0] = new Ram("Kingston","DDR4",2);
-        supportedRam[1] = new Ram("Kingston","DDR4",4);
-        supportedRam[2] = new Ram("Kingston","DDR4",8);
-        supportedRam[3] = new Ram("Kingston","DDR4",16);
         
+        supportedRam[0] = new Ram("Kingston", "DDR4", 2);
+        supportedRam[1] = new Ram("Kingston", "DDR4", 4);
+        supportedRam[2] = new Ram("Kingston", "DDR4", 8);
+        supportedRam[3] = new Ram("Kingston", "DDR4", 16);
+
         this.supportedPsu = new PowerSupply[4];
-        supportedPsu[0] = new PowerSupply("Evga","Bronze",350);
-        supportedPsu[1] = new PowerSupply("Evga","Gold",500);
-        supportedPsu[2] = new PowerSupply("Evga","SuperNOVA",650);
-        supportedPsu[3] = new PowerSupply("Evga","SuperNOVA",750);
+        
+        supportedPsu[0] = new PowerSupply("Evga", "Bronze", 350);
+        supportedPsu[1] = new PowerSupply("Evga", "Gold", 500);
+        supportedPsu[2] = new PowerSupply("Evga", "SuperNOVA", 650);
+        supportedPsu[3] = new PowerSupply("Evga", "SuperNOVA", 750);
     }
 
     public Gpu[] getSupportedGpus() {
@@ -97,7 +100,6 @@ public class Shell {
         this.supportedPsu = supportedPsu;
     }
 
-    
     // printAll"computer part" functions are used to show all supported computer parts in the program.
     public void PrintAllCpus() {
 
@@ -137,23 +139,22 @@ public class Shell {
             System.out.print("ID: " + this.supportedRam[i].getId());
             System.out.print(" Type:" + this.supportedRam[i].getType());
             System.out.print(" Series: " + this.supportedRam[i].getSeries());
-            System.out.print(" Capacity: " + this.supportedRam[i].getCapacity()+"Gb");
+            System.out.print(" Capacity: " + this.supportedRam[i].getCapacity() + "Gb");
             System.out.println();
         }
-    }    
-    
+    }
+
     public void PrintAllsupportedPsu() {
         for (int i = 0; i < this.supportedPsu.length; i++) {
             System.out.print("ID: " + this.supportedPsu[i].getId());
             System.out.print(" Type:" + this.supportedPsu[i].getType());
             System.out.print(" Series : " + this.supportedPsu[i].getSeries());
-            System.out.print(" Wattage: " + this.supportedPsu[i].getWattage()+"W");
+            System.out.print(" Wattage: " + this.supportedPsu[i].getWattage() + "W");
             System.out.println();
         }
-    } 
+    }
     // printAll"computer part" functions are used to show all supported computer parts in the program END.
-    
-    
+
     // Get"computer part"ById functions are used to retreive the selected computer part.
     public Cpu GetCpuById(int id) {
 
@@ -193,6 +194,7 @@ public class Shell {
         }
         return tempMb;
     }
+
     public Ram GetRamById(int id) {
 
         Ram tempRam = null;
@@ -205,6 +207,7 @@ public class Shell {
         }
         return tempRam;
     }
+
     public PowerSupply GetPowerSupplyById(int id) {
 
         PowerSupply tempPsu = null;
@@ -218,15 +221,15 @@ public class Shell {
         return tempPsu;
     }
     // Get"computer part"ById functions are used to retreive the selected computer part END.
-    
+
     // this function was made to rests the Ids whenever you start a new build.
-    public void resetId(){
+    public void resetId() {
         ComputerComponents computerComponents = new ComputerComponents();
         computerComponents.setSerialNumber(0);
-        
+
     }
-    
-    // this function prints the selected computer parts in a build object.
+
+    // this function prints the selected computer parts the user has chosen.
     public void ShowBuild(Build build) {
 
         Cpu cpu = build.getCpu();
@@ -237,8 +240,8 @@ public class Shell {
         System.out.println("Cpu id: " + cpu.getId() + " Type: " + cpu.getType() + " Series: " + cpu.getSeries() + " Generation: " + cpu.getGeneration());
         System.out.println("Gpu id: " + gpu.getId() + " Type: " + gpu.getType() + " Series: " + gpu.getSeries() + " Model: " + gpu.getModel());
         System.out.println("MB id: " + mb.getId() + " Type: " + mb.getType() + " Series: " + mb.getSeries());
-        System.out.println("Ram id: " + ram.getId() + " Type: " + ram.getType() + " Series: " + ram.getSeries()+ " Capacity: " + ram.getCapacity());
-        System.out.println("Psu id: " + Psu.getId() + " Type: " + Psu.getType() + " Series: " + Psu.getSeries()+ " Wattage: "+ Psu.getWattage());
+        System.out.println("Ram id: " + ram.getId() + " Type: " + ram.getType() + " Series: " + ram.getSeries() + " Capacity: " + ram.getCapacity());
+        System.out.println("Psu id: " + Psu.getId() + " Type: " + Psu.getType() + " Series: " + Psu.getSeries() + " Wattage: " + Psu.getWattage());
     }
-    
+
 }

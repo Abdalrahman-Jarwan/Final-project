@@ -26,7 +26,7 @@ public class Main {
             Build build = prompts();
 
             shell.ShowBuild(build);
-            System.out.println(" Do you want to do compatibility check? if yes enter 1, enter any other number to continue ");
+            System.out.println(" Do you want to do compatibility check? if yes please enter 1, to discard this build and for more options please enter any other number.");
             input = scanner.nextInt();
 
             if (input == 1) {
@@ -35,7 +35,7 @@ public class Main {
 
             }
 
-            System.out.println(" Would you like to do another build? if yes press 1, if you want to exit press 0 ");
+            System.out.println(" Would you like to do another build? if yes please enter 1, if you want to exit enter 0 ");
             input = scanner.nextInt();
 
             if (input == 0) {
@@ -48,7 +48,7 @@ public class Main {
         }
         } catch(Exception ex){
             System.out.println("Something wrong happenned with error code: "+ ex);
-            System.out.println("Make sure you are following the constructions.");
+            System.out.println("Make sure you are following the instructions.");
         }
     }
 
